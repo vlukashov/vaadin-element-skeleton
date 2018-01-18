@@ -22,5 +22,18 @@ module.exports = {
     } else if (argv.env === 'saucelabs-cron') {
       context.options.plugins.sauce.browsers = cronPlatforms;
     }
+  },
+  plugins: {
+    local: {
+      browserOptions: {
+        chrome: [
+          'headless',
+          'disable-gpu'
+        ],
+        firefox: [
+          '-headless'
+        ]
+      }
+    }
   }
 };
